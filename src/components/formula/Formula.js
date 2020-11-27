@@ -3,7 +3,10 @@ import {ExcelComponent} from '@/core/ExcelComponent'
 export class Formula extends ExcelComponent{
 	static componentClass = 'excel__formula'
 	constructor($root, options){
-		super()
+		super($root, {
+			listeners: ['input'],
+			name: 'Formula'
+		})
 	}
 
 	toHTML(){
@@ -11,5 +14,9 @@ export class Formula extends ExcelComponent{
 			<div class="info">fx</div>
           	<div class="input" contenteditable spellcheck="false"></div>
 		`
+	}
+
+	onInput(event){
+		console.log('Formula event', event)
 	}
 }

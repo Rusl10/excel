@@ -3,7 +3,10 @@ import {ExcelComponent} from "@/core/ExcelComponent"
 export class Header extends ExcelComponent{
 	static componentClass = 'excel__header'
 	constructor($root, options){
-		super()
+		super($root, {
+			listeners: ['input'],
+			name: 'Header'
+		})
 	}
 
 	toHTML(){
@@ -18,5 +21,10 @@ export class Header extends ExcelComponent{
 		</div>
 		</div>
 		`
+	}
+
+	onInput(event){
+		console.log('this.$root', this.$root)
+		console.log('Header event', event)
 	}
 }

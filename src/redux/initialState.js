@@ -1,6 +1,5 @@
 import {defaultStyles, defaultTitle} from '@/constants'
 import {storage} from '@/core/utils'
-debugger
 const defaultState = {
 	colState: {},
 	rowState: {},

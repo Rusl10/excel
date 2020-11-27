@@ -3,7 +3,10 @@ import {ExcelComponent} from "@/core/ExcelComponent"
 export class Table extends ExcelComponent{
 	static componentClass = 'excel__table'
 	constructor($root, options){
-		super()
+		super($root, {
+      listeners: ['mousedown', 'keydown', 'input'],
+      name: 'Table'
+    })
 	}
 
 	toHTML(){
@@ -61,4 +64,16 @@ export class Table extends ExcelComponent{
           </div>
 		`
 	}
+
+  onMousedown(event){
+
+  }
+
+  onKeydown(event){
+
+  }
+
+  onInput(event){
+    
+  }
 }

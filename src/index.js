@@ -7,9 +7,15 @@ import {Excel} from '@/components/excel/Excel'
 import {rootReducer} from '@/redux/rootReducer'
 import {createStore} from '@/core/createStore'
 import {initialState} from '@/redux/initialState'
+import {storage} from '@/core/utils'
 
-debugger
+
 const store = createStore(rootReducer, initialState)
+
+store.subscribe(state => {
+	storage('excel-state', state)
+})
+
 console.log('store', store)
 window.store = store
 
@@ -22,6 +28,7 @@ const excel = new Excel('#app', {
 	]
 })
 
+window.excel = excel
 
 excel.render()
 
