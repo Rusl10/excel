@@ -1,9 +1,11 @@
 import {$} from "@/core/Dom"
-
+import {StoreSubscriber} from "@/redux/StoreSubscriber"
 export class Excel{
 	constructor(el, options){
 		this.$el = $(el)
 		this.components = options.components
+		this.store = options.store
+		this.storeSubscriber = new StoreSubscriber(this.store)
 	}
 
 	getRoot(){
@@ -27,6 +29,8 @@ export class Excel{
 
 	render(){
 		this.$el.append(this.getRoot())
+
+		this.storeSubscriber.subscribeComponents(this.components)
 
 		this.components.forEach(component => component.init())
 	}

@@ -5,6 +5,7 @@ export function createStore(rootReducer, initialState = {}){
 	return {
 		subscribe(fn){
 			listeners.push(fn)
+			console.log('listeners', listeners)
 			return {
 				unsubscribe(){
 					listeners = listeners.filter(listener => listener !== fn)

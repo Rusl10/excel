@@ -7,6 +7,7 @@ export class Header extends ExcelComponent{
 			listeners: ['input'],
 			name: 'Header'
 		})
+
 	}
 
 	toHTML(){

@@ -5,7 +5,8 @@ export class Formula extends ExcelComponent{
 	constructor($root, options){
 		super($root, {
 			listeners: ['input'],
-			name: 'Formula'
+			name: 'Formula',
+			subscribe: ['currentText']
 		})
 	}
 

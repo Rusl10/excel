@@ -25,7 +25,8 @@ const excel = new Excel('#app', {
 		Formula,
 		Toolbar,
 		Table
-	]
+	],
+	store
 })
 
 window.excel = excel
