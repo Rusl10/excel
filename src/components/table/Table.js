@@ -10,6 +10,12 @@ export class Table extends ExcelComponent{
     })
 	}
 
+  init(){
+    super.init()
+    this.$on('formula:input', text => console.log('text', text))
+  }
+
+
 	toHTML(){
 		return `
           <div class="row">

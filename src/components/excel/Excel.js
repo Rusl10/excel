@@ -1,6 +1,6 @@
 import {$} from "@/core/Dom"
 import {StoreSubscriber} from "@/redux/StoreSubscriber"
-import {Emitter} from "@/core/Emitter"
+import {Emitter} from "@core/Emitter"
 export class Excel{
 	constructor(el, options){
 		this.$el = $(el)
