@@ -5,7 +5,8 @@ export class Table extends ExcelComponent{
 	constructor($root, options){
 		super($root, {
       listeners: ['mousedown', 'keydown', 'input'],
-      name: 'Table'
+      name: 'Table',
+      ...options
     })
 	}
 

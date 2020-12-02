@@ -6,7 +6,8 @@ export class Toolbar extends ExcelComponent{
 		super($root, {
       listeners: ['click'],
       name: 'Toolbar',
-      subscribe: ['currentStyles']
+      subscribe: ['currentStyles'],
+      ...options
     })
 	}
 

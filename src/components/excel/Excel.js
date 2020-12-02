@@ -1,10 +1,12 @@
 import {$} from "@/core/Dom"
 import {StoreSubscriber} from "@/redux/StoreSubscriber"
+import {Emitter} from "@/core/Emitter"
 export class Excel{
 	constructor(el, options){
 		this.$el = $(el)
 		this.components = options.components
 		this.store = options.store
+		this.emitter = new Emitter()
 		this.storeSubscriber = new StoreSubscriber(this.store)
 	}
 
@@ -17,7 +19,10 @@ export class Excel{
 			создании инстанса класса компонента. В конструкторе компонента прокидываем эмиттер и стор
 			, через super() в родительский класс ExcelComponent, где используем их в методах $dispatch(метод стора), 
 			$on и $emit(методы для вызова методов класса Emitter)  - пока не готово */
-			const componentOptions = {}
+			const componentOptions = {
+				emitter: this.emitter,
+				store: this.store
+			}
 			const componentWrapper = $.create('div', Component.componentClass)
 			const component = new Component(componentWrapper, componentOptions)
 			componentWrapper.html(component.toHTML())
